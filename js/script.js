@@ -16,6 +16,11 @@ let playlist = [
         artist: "Lil Uzi Vert"
     }
 ];
-let songName = $("#songName").val();
-let songArtist = $("#songArtist").val();
-$("#playlist").append("<p>" + playlist + "</p>");
+$("#add").click(function(){
+    let songName = $("#songName").val();
+    let songArtist = $("#songArtist").val();
+    $("#playlist").append(`<ul> ${songName} ${songArtist} </ul>`)
+});
+for(let song of playlist){
+    $("#playlist").append(`<ul> ${song["name"]} ${song["artist"]} </ul>`);
+}
